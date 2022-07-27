@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<GridPane alignment="center" prefHeight="402.0" prefWidth="1059.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="730.4" minHeight="730.4" prefHeight="730.4" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="676.0" prefWidth="414.0" style="-fx-background-color: #2ca08d;" GridPane.columnIndex="1">
+         <children>
+            <Label accessibleRole="IMAGE_VIEW" alignment="CENTER" contentDisplay="CENTER" layoutX="84.0" layoutY="129.0" prefHeight="108.0" prefWidth="172.0" style="-fx-background-color: #2ca08d;" text="jsburp" textAlignment="RIGHT" textOverrun="CLIP">
+               <font>
+                  <Font size="54.0" />
+               </font>
+            </Label>
+            <Label layoutX="144.0" layoutY="237.0" text="--selenium前端爆破工具">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+         </children>
+      </Pane>
+      <TabPane pickOnBounds="false" prefHeight="793.0" prefWidth="792.0" style="-fx-tab-max-height: 40; -fx-tab-max-width: 80; -fx-tab-min-height: 40; -fx-tab-min-width: 80;" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="5">
+         <tabs>
+            <Tab style="-fx-background-color: #f7c356;" text="爆破">
+               <content>
+                  <Pane fx:id="p1" cacheShape="false" centerShape="false" prefHeight="784.0" prefWidth="408.0" style="-fx-background-color: #d5ded9;">
+                     <children>
+                        <Label layoutX="71.0" layoutY="23.0" prefHeight="344.0" prefWidth="577.0" style="-fx-background-color: #f7c356; -fx-background-radius: 15px;" />
+                        <Label layoutX="71.0" layoutY="391.0" prefHeight="242.0" prefWidth="577.0" style="-fx-background-color: #7e9178; -fx-background-radius: 15px;" />
+                        <TextField fx:id="urltext" layoutX="117.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="495.0" promptText="url" style="-fx-border-radius: 10px; -fx-background-radius: 15px;" text="https://admin.baobeihuijia.com/syslogin.aspx?result=3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="usertxt" layoutX="117.0" layoutY="140.0" prefHeight="50.0" prefWidth="495.0" promptText="输入账号xpath" style="-fx-background-radius: 15px;" text="#UserName" />
+                        <TextField fx:id="passtext" layoutX="117.0" layoutY="200.0" prefHeight="50.0" prefWidth="495.0" promptText="输入密码xpath" style="-fx-background-radius: 15px;" text="#PassWord" />
+                        <TextField fx:id="yzimg" layoutX="117.0" layoutY="430.0" prefHeight="50.0" prefWidth="238.0" promptText="(选填)输入验证码图片xpath" style="-fx-background-radius: 15px;" text="#vcodeimg" />
+                        <TextField fx:id="denglu" layoutX="117.0" layoutY="260.0" prefHeight="50.0" prefWidth="495.0" promptText="输入登录框xpath" style="-fx-background-radius: 15px;" text="#login" />
+                        <Button fx:id="chooserpass" contentDisplay="RIGHT" layoutX="519.0" layoutY="205.0" mnemonicParsing="false" onAction="#passfile" prefHeight="40.0" prefWidth="85.0" style="-fx-background-radius: 15px;" text="密 码">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button fx:id="chooseuser" cacheHint="SPEED" contentDisplay="RIGHT" depthTest="ENABLE" layoutX="519.0" layoutY="145.0" mnemonicParsing="false" onAction="#userfile" prefHeight="40.0" prefWidth="85.0" style="-fx-background-radius: 15px;" text="账  号">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button fx:id="logintext" contentDisplay="CENTER" layoutX="286.0" layoutY="319.0" mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="147.0" style="-fx-background-radius: 15px; -fx-background-color: #2ca08d;" text="爆    破">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="uptext" layoutX="117.0" layoutY="490.0" prefHeight="50.0" prefWidth="495.0" promptText="(选填)输入需点击的xpath" style="-fx-background-radius: 15px;" />
+                        <TextField fx:id="danxuantext" layoutX="117.0" layoutY="550.0" prefHeight="50.0" prefWidth="495.0" promptText="(选填)输入单选框xpath" style="-fx-background-radius: 15px;" />
+                        <Label accessibleRole="IMAGE_VIEW" alignment="CENTER" contentDisplay="CENTER" layoutX="312.0" layoutY="29.0" opacity="0.34" prefHeight="51.0" prefWidth="86.0" text="爆破 " textAlignment="RIGHT" textOverrun="CLIP">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="threadnum" alignment="CENTER" layoutX="235.0" layoutY="326.0" prefHeight="26.0" prefWidth="41.0" promptText="5" text="5" />
+                        <Label layoutX="206.0" layoutY="328.0" prefHeight="23.0" prefWidth="46.0" text="线程" />
+                        <TextField fx:id="yztext" layoutX="368.0" layoutY="430.0" prefHeight="50.0" prefWidth="241.0" promptText="(选填)输入验证码xpath" style="-fx-background-radius: 15px;" text="#vcode" />
+                        <Label accessibleRole="IMAGE_VIEW" alignment="CENTER" contentDisplay="CENTER" layoutX="289.0" layoutY="383.0" opacity="0.51" prefHeight="51.0" prefWidth="134.0" text="(选  填)" textAlignment="RIGHT" textOverrun="CLIP">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab style="-fx-background-color: #f7c356;" text="数据加密">
+               <content>
+                  <Pane fx:id="p11" cacheShape="false" centerShape="false" prefHeight="784.0" prefWidth="408.0" style="-fx-background-color: #d5ded9;">
+                     <children>
+                        <Label layoutX="71.0" layoutY="23.0" prefHeight="344.0" prefWidth="577.0" style="-fx-background-color: #2ca08d; -fx-background-radius: 15px;" />
+                        <Label layoutX="71.0" layoutY="391.0" prefHeight="242.0" prefWidth="577.0" style="-fx-background-color: #f7c356; -fx-background-radius: 15px;" />
+                        <TextField fx:id="urltext1" layoutX="117.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="495.0" promptText="url" style="-fx-border-radius: 10px; -fx-background-radius: 15px;" text="https://admin.jzyx.com/member/login.do">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="usertxt1" layoutX="117.0" layoutY="140.0" prefHeight="50.0" prefWidth="495.0" promptText="输入账号xpath" style="-fx-background-radius: 15px;" text="#J_log &gt; div &gt; form &gt; div.form-splice &gt; div:nth-child(1) &gt; div &gt; input" />
+                        <TextField fx:id="passtext1" layoutX="117.0" layoutY="200.0" prefHeight="50.0" prefWidth="495.0" promptText="输入密码xpath" style="-fx-background-radius: 15px;" text="#J_log &gt; div &gt; form &gt; div.form-splice &gt; div:nth-child(2) &gt; div &gt; input" />
+                        <TextField fx:id="yzimg1" alignment="CENTER" layoutX="507.0" layoutY="430.0" prefHeight="50.0" prefWidth="100.0" promptText="验证码长度" style="-fx-background-radius: 15px;" text="5" />
+                        <TextField fx:id="denglu1" layoutX="117.0" layoutY="260.0" prefHeight="50.0" prefWidth="495.0" promptText="输入登录框xpath" style="-fx-background-radius: 15px;" text="#J_log &gt; div &gt; form &gt; button" />
+                        <Button fx:id="chooserpass1" contentDisplay="RIGHT" layoutX="519.0" layoutY="205.0" mnemonicParsing="false" onAction="#passfile" prefHeight="40.0" prefWidth="85.0" style="-fx-background-radius: 15px;" text="密 码">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="chooseuser1" cacheHint="SPEED" contentDisplay="RIGHT" depthTest="ENABLE" layoutX="519.0" layoutY="145.0" mnemonicParsing="false" onAction="#userfile" prefHeight="40.0" prefWidth="85.0" style="-fx-background-radius: 15px;" text="账  号">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="logintext1" contentDisplay="CENTER" layoutX="286.0" layoutY="319.0" mnemonicParsing="false" onAction="#login1" prefHeight="40.0" prefWidth="147.0" style="-fx-background-radius: 15px; -fx-background-color: #f7c356;" text="爆    破">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="uptext1" layoutX="117.0" layoutY="490.0" prefHeight="50.0" prefWidth="495.0" promptText="(选填)输入需点击的xpath" style="-fx-background-radius: 15px;" />
+                        <TextField fx:id="danxuantext1" layoutX="117.0" layoutY="550.0" prefHeight="50.0" prefWidth="495.0" promptText="(选填)输入单选框xpath" style="-fx-background-radius: 15px;" />
+                        <Label accessibleRole="IMAGE_VIEW" alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="29.0" opacity="0.34" prefHeight="51.0" prefWidth="219.0" text="数据加密" textAlignment="RIGHT" textOverrun="CLIP">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="threadnum1" alignment="CENTER" layoutX="240.0" layoutY="326.0" prefHeight="26.0" prefWidth="40.0" promptText="5" text="1" />
+                        <Label layoutX="206.0" layoutY="328.0" prefHeight="23.0" prefWidth="46.0" text="线程" />
+                        <TextField fx:id="yztext1" layoutX="117.0" layoutY="430.0" prefHeight="50.0" prefWidth="373.0" promptText="(选填)输入验证码xpath" style="-fx-background-radius: 15px;" text="#J_log &gt; div &gt; form &gt; div.form-splice &gt; div.form-group.form-code &gt; div &gt; input" />
+                        <Label accessibleRole="IMAGE_VIEW" alignment="CENTER" contentDisplay="CENTER" layoutX="289.0" layoutY="383.0" opacity="0.51" prefHeight="51.0" prefWidth="134.0" text="(选  填)" textAlignment="RIGHT" textOverrun="CLIP">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</GridPane>

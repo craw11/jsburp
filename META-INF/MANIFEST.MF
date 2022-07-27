@@ -1,0 +1,57 @@
+Manifest-Version: 1.0
+Main-Class: sample.Main
+Class-Path: selenium-firefox-driver-4.3.0.jar selenium-support-4.3.0.jar
+  guava-31.1-jre.jar poi-3.17.jar weka-dev-3.9.6.jar netty-resolver-4.1.
+ 78.Final.jar jakarta.activation-api-1.2.2.jar jcommander-1.82.jar netty
+ -transport-4.1.78.Final.jar commons-codec-1.9.jar native_ref-java-1.1.j
+ ar netlib-native_ref-linux-armhf-1.1-natives.jar selenium-safari-driver
+ -4.3.0.jar failureaccess-1.0.1.jar selenium-devtools-v101-4.3.0.jar ope
+ ntelemetry-sdk-metrics-1.15.0.jar netty-transport-native-epoll-4.1.60.F
+ inal-linux-x86_64.jar slf4j-api-1.7.25.jar netlib-native_system-osx-x86
+ _64-1.1-natives.jar commons-lang3-3.5.jar dnsjava-2.1.8.jar netlib-java
+ -1.1.jar httpmime-4.5.3.jar java-cup-runtime-11b-20160615.jar netty-buf
+ fer-4.1.78.Final.jar netty-transport-native-epoll-4.1.78.Final.jar reac
+ tive-streams-1.0.3.jar opentelemetry-sdk-common-1.15.0.jar jtoml-2.0.0.
+ jar selenium-api-4.3.0.jar httpcore-4.4.6.jar selenium-chromium-driver-
+ 4.3.0.jar commons-io-2.5.jar listenablefuture-9999.0-empty-to-avoid-con
+ flict-with-guava.jar failsafe-3.2.4.jar jzlib-1.1.3.jar async-http-clie
+ nt-2.12.3.jar jackson-databind-2.8.9.jar opentelemetry-sdk-trace-1.15.0
+ .jar netlib-native_ref-linux-x86_64-1.1-natives.jar core-1.1.jar jsr305
+ -3.0.2.jar jackson-annotations-2.8.9.jar netty-reactive-streams-2.0.4.j
+ ar servlet-api-2.5.jar selenium-chrome-driver-4.3.0.jar netty-common-4.
+ 1.78.Final.jar netty-handler-proxy-4.1.60.Final.jar selenium-java-4.3.0
+ .jar error_prone_annotations-2.11.0.jar netlib-native_system-linux-x86_
+ 64-1.1-natives.jar netty-codec-4.1.78.Final.jar selenium-devtools-v102-
+ 4.3.0.jar selenium-ie-driver-4.3.0.jar netlib-native_system-linux-armhf
+ -1.1-natives.jar netlib-native_system-win-x86_64-1.1-natives.jar opente
+ lemetry-exporter-logging-1.15.0.jar arpack_combined_all-0.1.jar jakarta
+ .activation-1.2.2.jar jaxb-runtime-2.3.5.jar poi-ooxml-3.17.jar bounce-
+ 0.18.jar netty-handler-4.1.78.Final.jar selenium-remote-driver-4.3.0.ja
+ r netty-codec-http-4.1.78.Final.jar async-http-client-netty-utils-2.12.
+ 3.jar bcprov-jdk15on-1.58.jar netlib-native_ref-win-i686-1.1-natives.ja
+ r netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar WekaExcel-1
+ .0.8.jar browsermob-core-2.1.5.jar xmlbeans-2.6.0.jar j2objc-annotation
+ s-1.3.jar httpclient-4.5.3.jar netty-transport-classes-kqueue-4.1.78.Fi
+ nal.jar jniloader-1.1.jar commons-exec-1.3.jar mitm-2.1.5.jar flatlaf-2
+ .0.jar netty-transport-classes-epoll-4.1.78.Final.jar auto-common-1.2.j
+ ar selenium-http-4.3.0.jar selenium-devtools-v103-4.3.0.jar jcl-over-sl
+ f4j-1.7.25.jar selenium-opera-driver-4.3.0.jar mtj-1.0.4.jar txw2-2.3.5
+ .jar browsermob-legacy-2.1.5.jar netty-all-4.0.51.Final.jar stax-api-1.
+ 0.1.jar opentelemetry-context-1.15.0.jar netlib-native_ref-win-x86_64-1
+ .1-natives.jar netty-codec-socks-4.1.60.Final.jar java-cup-11b-20160615
+ .jar netlib-native_system-linux-i686-1.1-natives.jar netlib-native_ref-
+ linux-i686-1.1-natives.jar jfilechooser-bookmarks-0.1.6.jar istack-comm
+ ons-runtime-3.0.12.jar opentelemetry-sdk-1.15.0.jar littleproxy-1.1.0-b
+ eta-bmp-17.jar bcpkix-jdk15on-1.58.jar poi-ooxml-schemas-3.17.jar check
+ er-qual-3.12.0.jar opentelemetry-sdk-extension-autoconfigure-spi-1.15.0
+ .jar opentelemetry-semconv-1.15.0-alpha.jar auto-service-annotations-1.
+ 0.1.jar netty-transport-native-kqueue-4.1.78.Final.jar selenium-json-4.
+ 3.0.jar opentelemetry-sdk-extension-autoconfigure-1.15.0-alpha.jar sele
+ nium-devtools-v85-4.3.0.jar jackson-core-2.8.9.jar auto-service-1.0.1.j
+ ar curvesapi-1.04.jar opentelemetry-api-1.15.0.jar jclipboardhelper-0.1
+ .0.jar selenium-edge-driver-4.3.0.jar opentelemetry-sdk-logs-1.15.0-alp
+ ha.jar netty-transport-native-unix-common-4.1.78.Final.jar byte-buddy-1
+ .12.10.jar native_system-java-1.1.jar netlib-native_ref-osx-x86_64-1.1-
+ natives.jar netlib-native_system-win-i686-1.1-natives.jar jakarta.xml.b
+ ind-api-2.3.3.jar commons-collections4-4.1.jar
+

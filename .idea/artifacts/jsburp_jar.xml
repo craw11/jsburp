@@ -1,0 +1,137 @@
+<component name="ArtifactManager">
+  <artifact name="jsburp:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/jsburp_jar</output-path>
+    <root id="root">
+      <element id="archive" name="jsburp.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="jsburp" />
+      </element>
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-firefox-driver:4.3.0" />
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-support:4.3.0" />
+      <element id="library" level="project" name="Maven: com.google.guava:guava:31.1-jre" />
+      <element id="library" level="project" name="Maven: org.apache.poi:poi:3.17" />
+      <element id="library" level="project" name="Maven: nz.ac.waikato.cms.weka:weka-dev:3.9.6" />
+      <element id="library" level="project" name="Maven: io.netty:netty-resolver:4.1.78.Final" />
+      <element id="library" level="project" name="Maven: jakarta.activation:jakarta.activation-api:1.2.2" />
+      <element id="library" level="project" name="Maven: com.beust:jcommander:1.82" />
+      <element id="library" level="project" name="Maven: io.netty:netty-transport:4.1.78.Final" />
+      <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
+      <element id="library" level="project" name="Maven: com.github.fommil.netlib:native_ref-java:1.1" />
+      <element id="library" level="project" name="Maven: com.github.fommil.netlib:netlib-native_ref-linux-armhf:natives:1.1" />
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-safari-driver:4.3.0" />
+      <element id="library" level="project" name="Maven: com.google.guava:failureaccess:1.0.1" />
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-devtools-v101:4.3.0" />
+      <element id="library" level="project" name="Maven: io.opentelemetry:opentelemetry-sdk-metrics:1.15.0" />
+      <element id="library" level="project" name="Maven: io.netty:netty-transport-native-epoll:linux-x86_64:4.1.60.Final" />
+      <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
+      <element id="library" level="project" name="Maven: com.github.fommil.netlib:netlib-native_system-osx-x86_64:natives:1.1" />
+      <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.5" />
+      <element id="library" level="project" name="Maven: dnsjava:dnsjava:2.1.8" />
+      <element id="library" level="project" name="Maven: com.googlecode.netlib-java:netlib-java:1.1" />
+      <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpmime:4.5.3" />
+      <element id="library" level="project" name="Maven: com.github.vbmacher:java-cup-runtime:11b-20160615" />
+      <element id="library" level="project" name="Maven: io.netty:netty-buffer:4.1.78.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-transport-native-epoll:4.1.78.Final" />
+      <element id="library" level="project" name="Maven: org.reactivestreams:reactive-streams:1.0.3" />
+      <element id="library" level="project" name="Maven: io.opentelemetry:opentelemetry-sdk-common:1.15.0" />
+      <element id="library" level="project" name="Maven: io.ous:jtoml:2.0.0" />
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-api:4.3.0" />
+      <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.6" />
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-chromium-driver:4.3.0" />
+      <element id="library" level="project" name="Maven: commons-io:commons-io:2.5" />
+      <element id="library" level="project" name="Maven: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" />
+      <element id="library" level="project" name="Maven: dev.failsafe:failsafe:3.2.4" />
+      <element id="library" level="project" name="Maven: com.jcraft:jzlib:1.1.3" />
+      <element id="library" level="project" name="Maven: org.asynchttpclient:async-http-client:2.12.3" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.9" />
+      <element id="library" level="project" name="Maven: io.opentelemetry:opentelemetry-sdk-trace:1.15.0" />
+      <element id="library" level="project" name="Maven: com.github.fommil.netlib:netlib-native_ref-linux-x86_64:natives:1.1" />
+      <element id="library" level="project" name="Maven: com.github.fommil.netlib:core:1.1" />
+      <element id="library" level="project" name="Maven: com.google.code.findbugs:jsr305:3.0.2" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.9" />
+      <element id="library" level="project" name="Maven: com.typesafe.netty:netty-reactive-streams:2.0.4" />
+      <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-chrome-driver:4.3.0" />
+      <element id="library" level="project" name="Maven: io.netty:netty-common:4.1.78.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-handler-proxy:4.1.60.Final" />
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-java:4.3.0" />
+      <element id="library" level="project" name="Maven: com.google.errorprone:error_prone_annotations:2.11.0" />
+      <element id="library" level="project" name="Maven: com.github.fommil.netlib:netlib-native_system-linux-x86_64:natives:1.1" />
+      <element id="library" level="project" name="Maven: io.netty:netty-codec:4.1.78.Final" />
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-devtools-v102:4.3.0" />
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-ie-driver:4.3.0" />
+      <element id="library" level="project" name="Maven: com.github.fommil.netlib:netlib-native_system-linux-armhf:natives:1.1" />
+      <element id="library" level="project" name="Maven: com.github.fommil.netlib:netlib-native_system-win-x86_64:natives:1.1" />
+      <element id="library" level="project" name="Maven: io.opentelemetry:opentelemetry-exporter-logging:1.15.0" />
+      <element id="library" level="project" name="Maven: net.sourceforge.f2j:arpack_combined_all:0.1" />
+      <element id="library" level="project" name="Maven: com.sun.activation:jakarta.activation:1.2.2" />
+      <element id="library" level="project" name="Maven: org.glassfish.jaxb:jaxb-runtime:2.3.5" />
+      <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml:3.17" />
+      <element id="library" level="project" name="Maven: nz.ac.waikato.cms.weka.thirdparty:bounce:0.18" />
+      <element id="library" level="project" name="Maven: io.netty:netty-handler:4.1.78.Final" />
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-remote-driver:4.3.0" />
+      <element id="library" level="project" name="Maven: io.netty:netty-codec-http:4.1.78.Final" />
+      <element id="library" level="project" name="Maven: org.asynchttpclient:async-http-client-netty-utils:2.12.3" />
+      <element id="library" level="project" name="Maven: org.bouncycastle:bcprov-jdk15on:1.58" />
+      <element id="library" level="project" name="Maven: com.github.fommil.netlib:netlib-native_ref-win-i686:natives:1.1" />
+      <element id="library" level="project" name="Maven: io.netty:netty-transport-native-kqueue:osx-x86_64:4.1.60.Final" />
+      <element id="library" level="project" name="Maven: nz.ac.waikato.cms.weka:WekaExcel:1.0.8" />
+      <element id="library" level="project" name="Maven: net.lightbody.bmp:browsermob-core:2.1.5" />
+      <element id="library" level="project" name="Maven: org.apache.xmlbeans:xmlbeans:2.6.0" />
+      <element id="library" level="project" name="Maven: com.google.j2objc:j2objc-annotations:1.3" />
+      <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.5.3" />
+      <element id="library" level="project" name="Maven: io.netty:netty-transport-classes-kqueue:4.1.78.Final" />
+      <element id="library" level="project" name="Maven: com.github.fommil:jniloader:1.1" />
+      <element id="library" level="project" name="Maven: org.apache.commons:commons-exec:1.3" />
+      <element id="library" level="project" name="Maven: net.lightbody.bmp:mitm:2.1.5" />
+      <element id="library" level="project" name="Maven: com.formdev:flatlaf:2.0" />
+      <element id="library" level="project" name="Maven: io.netty:netty-transport-classes-epoll:4.1.78.Final" />
+      <element id="library" level="project" name="Maven: com.google.auto:auto-common:1.2" />
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-http:4.3.0" />
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-devtools-v103:4.3.0" />
+      <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.25" />
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-opera-driver:4.3.0" />
+      <element id="library" level="project" name="Maven: com.googlecode.matrix-toolkits-java:mtj:1.0.4" />
+      <element id="library" level="project" name="Maven: org.glassfish.jaxb:txw2:2.3.5" />
+      <element id="library" level="project" name="Maven: net.lightbody.bmp:browsermob-legacy:2.1.5" />
+      <element id="library" level="project" name="Maven: io.netty:netty-all:4.0.51.Final" />
+      <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
+      <element id="library" level="project" name="Maven: io.opentelemetry:opentelemetry-context:1.15.0" />
+      <element id="library" level="project" name="Maven: com.github.fommil.netlib:netlib-native_ref-win-x86_64:natives:1.1" />
+      <element id="library" level="project" name="Maven: io.netty:netty-codec-socks:4.1.60.Final" />
+      <element id="library" level="project" name="Maven: com.github.vbmacher:java-cup:11b-20160615" />
+      <element id="library" level="project" name="Maven: com.github.fommil.netlib:netlib-native_system-linux-i686:natives:1.1" />
+      <element id="library" level="project" name="Maven: com.github.fommil.netlib:netlib-native_ref-linux-i686:natives:1.1" />
+      <element id="library" level="project" name="Maven: com.github.fracpete:jfilechooser-bookmarks:0.1.6" />
+      <element id="library" level="project" name="Maven: com.sun.istack:istack-commons-runtime:3.0.12" />
+      <element id="library" level="project" name="Maven: io.opentelemetry:opentelemetry-sdk:1.15.0" />
+      <element id="library" level="project" name="Maven: net.lightbody.bmp:littleproxy:1.1.0-beta-bmp-17" />
+      <element id="library" level="project" name="Maven: org.bouncycastle:bcpkix-jdk15on:1.58" />
+      <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml-schemas:3.17" />
+      <element id="library" level="project" name="Maven: org.checkerframework:checker-qual:3.12.0" />
+      <element id="library" level="project" name="Maven: io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi:1.15.0" />
+      <element id="library" level="project" name="Maven: io.opentelemetry:opentelemetry-semconv:1.15.0-alpha" />
+      <element id="library" level="project" name="Maven: com.google.auto.service:auto-service-annotations:1.0.1" />
+      <element id="library" level="project" name="Maven: io.netty:netty-transport-native-kqueue:4.1.78.Final" />
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-json:4.3.0" />
+      <element id="library" level="project" name="Maven: io.opentelemetry:opentelemetry-sdk-extension-autoconfigure:1.15.0-alpha" />
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-devtools-v85:4.3.0" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.9" />
+      <element id="library" level="project" name="Maven: com.google.auto.service:auto-service:1.0.1" />
+      <element id="library" level="project" name="Maven: com.github.virtuald:curvesapi:1.04" />
+      <element id="library" level="project" name="Maven: io.opentelemetry:opentelemetry-api:1.15.0" />
+      <element id="library" level="project" name="Maven: com.github.fracpete:jclipboardhelper:0.1.0" />
+      <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-edge-driver:4.3.0" />
+      <element id="library" level="project" name="Maven: io.opentelemetry:opentelemetry-sdk-logs:1.15.0-alpha" />
+      <element id="library" level="project" name="Maven: io.netty:netty-transport-native-unix-common:4.1.78.Final" />
+      <element id="library" level="project" name="Maven: net.bytebuddy:byte-buddy:1.12.10" />
+      <element id="library" level="project" name="Maven: com.github.fommil.netlib:native_system-java:1.1" />
+      <element id="library" level="project" name="Maven: com.github.fommil.netlib:netlib-native_ref-osx-x86_64:natives:1.1" />
+      <element id="library" level="project" name="Maven: com.github.fommil.netlib:netlib-native_system-win-i686:natives:1.1" />
+      <element id="library" level="project" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3" />
+      <element id="library" level="project" name="Maven: org.apache.commons:commons-collections4:4.1" />
+    </root>
+  </artifact>
+</component>
