@@ -68,7 +68,7 @@ python3 ocr_server.py --port 9898 --ocr --old
 
 **出现这个界面就代表第一步成功了,然后就可以关闭了**
 
-![image-20220729200812232](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20220729200812232.png)
+![image-20220729200812232](https://user-images.githubusercontent.com/68812236/181767385-bee30ddf-25ba-4600-b5f1-f3c2e624a125.png)
 
 ## 5.主目录底下
 
