@@ -114,6 +114,6 @@ java -jar jsburp.jar
 
 ## 11.config文件夹里的config.properties文件夹将openchrome的参数修改为false修改为就可以不显示浏览器了,可以获得更快的爆破速度
 
-# ps.最后有问题可以加我微信,一天20小时在新,最后推下我们的公众号"硬核颜究",安全圈核弹级大佬**龙哥**在里面坐镇(重点)
+# ps.最后有问题可以加我微信,一天20小时在线,最后推下我们的公众号"硬核颜究",安全圈核弹级大佬**龙哥**在里面坐镇(重点)
 
 ![d18e434c590c1c76a08f61bb90cad7d](https://user-images.githubusercontent.com/68812236/181768361-b73fbc9f-488e-4a24-bc69-18ff37135184.jpg)
