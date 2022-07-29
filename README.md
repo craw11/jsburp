@@ -26,7 +26,7 @@ ps:我内置了Chrome 版本 103.0.5060.134（正式版本）（64 位）的chro
 
 打开文件夹的Tools文件夹,下载完之后替换里面的Chromedriver
 
-![image-20220729195651512](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20220729195651512.png)
+![image-20220729195651512](https://user-images.githubusercontent.com/68812236/181764767-ba8e306d-ebd6-4fbd-bd8a-592ff33b40ae.png)
 
 ### 3.安装浏览器证书
 
