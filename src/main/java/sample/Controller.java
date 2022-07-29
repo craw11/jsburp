@@ -3,6 +3,7 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -26,12 +27,6 @@ public class Controller {
     private Button chooseuser1;
 
     @FXML
-    private TextField danxuantext;
-
-    @FXML
-    private TextField danxuantext1;
-
-    @FXML
     private TextField denglu;
 
     @FXML
@@ -43,6 +38,8 @@ public class Controller {
     @FXML
     private Button logintext1;
 
+
+
     @FXML
     private TextField passtext;
 
@@ -50,16 +47,13 @@ public class Controller {
     private TextField passtext1;
 
     @FXML
+    private Label showaction;
+
+    @FXML
     private TextField threadnum;
 
     @FXML
     private TextField threadnum1;
-
-    @FXML
-    private TextField uptext;
-
-    @FXML
-    private TextField uptext1;
 
     @FXML
     private TextField urltext;
@@ -86,6 +80,10 @@ public class Controller {
     private TextField yztext1;
 
     @FXML
+    private TextField port;
+
+
+    @FXML
     void login(ActionEvent event) {
 
         String usertxtText = usertxt.getText();
@@ -94,20 +92,19 @@ public class Controller {
         String yzimgText = yzimg.getText();
         String yztextText = yztext.getText();
         String dengluText = denglu.getText();
-        String uptextText = uptext.getText();
-        String text = danxuantext.getText();
+
 
         int threadnumText = Integer.parseInt(threadnum.getText());
 
         File path = getFilePath.getPath();
         String parent = path.getParent();
         if (getAccount.user.size() == 0) {
-            getAccount.setUser(parent+"/dict/user.txt");
+            getAccount.setUser(parent + "/dict/user.txt");
 //            getAccount.setUser("src/main/resources/user.txt");
         }
 
         if (getAccount.password.size() == 0) {
-            getAccount.setPass(parent+"/dict/pass.txt");
+            getAccount.setPass(parent + "/dict/pass.txt");
 //            getAccount.setPass("src/main/resources/pass.txt");
         }
 
@@ -158,12 +155,12 @@ public class Controller {
         File path = getFilePath.getPath();
         String parent = path.getParent();
         if (getAccount.user.size() == 0) {
-            getAccount.setUser(parent+"/dict/user.txt");
+            getAccount.setUser(parent + "/dict/user.txt");
 //            getAccount.setUser("src/main/resources/user.txt");
         }
 
         if (getAccount.password.size() == 0) {
-            getAccount.setPass(parent+"/dict/pass.txt");
+            getAccount.setPass(parent + "/dict/pass.txt");
 //            getAccount.setPass("src/main/resources/pass.txt");
         }
 
@@ -213,5 +210,26 @@ public class Controller {
         String path = selectedFile.getPath();
         getAccount.setPass(path);
         System.out.println(path);
+    }
+
+    @FXML
+    void actionocr(ActionEvent event) {
+
+        new ocroptions().setOCRPORT(port.getText());
+        new actionocr().actionocr(ocroptions.getOCRPORT());
+
+    }
+
+    @FXML
+    void checkocr(ActionEvent event) throws Exception {
+
+        String s = checkpy.doGet("http://127.0.0.1:"+ocroptions.getOCRPORT()+ "/ping");
+        if (s.equals("pong")){
+            showaction.setText("连接成功");
+        } else {
+            showaction.setText("连接失败");
+        }
+
+
     }
 }

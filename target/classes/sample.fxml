@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
 <GridPane alignment="center" prefHeight="402.0" prefWidth="1059.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <columnConstraints>
       <ColumnConstraints />
@@ -39,16 +47,16 @@
                   <Pane fx:id="p1" cacheShape="false" centerShape="false" prefHeight="784.0" prefWidth="408.0" style="-fx-background-color: #d5ded9;">
                      <children>
                         <Label layoutX="71.0" layoutY="23.0" prefHeight="344.0" prefWidth="577.0" style="-fx-background-color: #f7c356; -fx-background-radius: 15px;" />
-                        <Label layoutX="71.0" layoutY="391.0" prefHeight="242.0" prefWidth="577.0" style="-fx-background-color: #7e9178; -fx-background-radius: 15px;" />
-                        <TextField fx:id="urltext" layoutX="117.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="495.0" promptText="url" style="-fx-border-radius: 10px; -fx-background-radius: 15px;" text="https://admin.baobeihuijia.com/syslogin.aspx?result=3">
+                        <Label layoutX="71.0" layoutY="391.0" prefHeight="255.0" prefWidth="577.0" style="-fx-background-color: #7e9178; -fx-background-radius: 15px;" />
+                        <TextField fx:id="urltext" layoutX="117.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="495.0" promptText="url" style="-fx-border-radius: 10px; -fx-background-radius: 15px;">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="usertxt" layoutX="117.0" layoutY="140.0" prefHeight="50.0" prefWidth="495.0" promptText="输入账号xpath" style="-fx-background-radius: 15px;" text="#UserName" />
-                        <TextField fx:id="passtext" layoutX="117.0" layoutY="200.0" prefHeight="50.0" prefWidth="495.0" promptText="输入密码xpath" style="-fx-background-radius: 15px;" text="#PassWord" />
-                        <TextField fx:id="yzimg" layoutX="117.0" layoutY="430.0" prefHeight="50.0" prefWidth="238.0" promptText="(选填)输入验证码图片xpath" style="-fx-background-radius: 15px;" text="#vcodeimg" />
-                        <TextField fx:id="denglu" layoutX="117.0" layoutY="260.0" prefHeight="50.0" prefWidth="495.0" promptText="输入登录框xpath" style="-fx-background-radius: 15px;" text="#login" />
+                        <TextField fx:id="usertxt" layoutX="117.0" layoutY="140.0" prefHeight="50.0" prefWidth="495.0" promptText="输入账号css selector" style="-fx-background-radius: 15px;" />
+                        <TextField fx:id="passtext" layoutX="117.0" layoutY="200.0" prefHeight="50.0" prefWidth="495.0" promptText="输入密码css selector" style="-fx-background-radius: 15px;" />
+                        <TextField fx:id="yzimg" alignment="CENTER" layoutX="245.0" layoutY="423.0" prefHeight="50.0" prefWidth="241.0" promptText="(选填)输入验证码图片css selector" style="-fx-background-radius: 15px;" />
+                        <TextField fx:id="denglu" layoutX="117.0" layoutY="260.0" prefHeight="50.0" prefWidth="495.0" promptText="输入登录框css selector" style="-fx-background-radius: 15px;" />
                         <Button fx:id="chooserpass" contentDisplay="RIGHT" layoutX="519.0" layoutY="205.0" mnemonicParsing="false" onAction="#passfile" prefHeight="40.0" prefWidth="85.0" style="-fx-background-radius: 15px;" text="密 码">
                            <font>
                               <Font size="14.0" />
@@ -62,8 +70,6 @@
                               <Font size="17.0" />
                            </font>
                         </Button>
-                        <TextField fx:id="uptext" layoutX="117.0" layoutY="490.0" prefHeight="50.0" prefWidth="495.0" promptText="(选填)输入需点击的xpath" style="-fx-background-radius: 15px;" />
-                        <TextField fx:id="danxuantext" layoutX="117.0" layoutY="550.0" prefHeight="50.0" prefWidth="495.0" promptText="(选填)输入单选框xpath" style="-fx-background-radius: 15px;" />
                         <Label accessibleRole="IMAGE_VIEW" alignment="CENTER" contentDisplay="CENTER" layoutX="312.0" layoutY="29.0" opacity="0.34" prefHeight="51.0" prefWidth="86.0" text="爆破 " textAlignment="RIGHT" textOverrun="CLIP">
                            <font>
                               <Font size="24.0" />
@@ -71,11 +77,15 @@
                         </Label>
                         <TextField fx:id="threadnum" alignment="CENTER" layoutX="235.0" layoutY="326.0" prefHeight="26.0" prefWidth="41.0" promptText="5" text="5" />
                         <Label layoutX="206.0" layoutY="328.0" prefHeight="23.0" prefWidth="46.0" text="线程" />
-                        <TextField fx:id="yztext" layoutX="368.0" layoutY="430.0" prefHeight="50.0" prefWidth="241.0" promptText="(选填)输入验证码xpath" style="-fx-background-radius: 15px;" text="#vcode" />
-                        <Label accessibleRole="IMAGE_VIEW" alignment="CENTER" contentDisplay="CENTER" layoutX="289.0" layoutY="383.0" opacity="0.51" prefHeight="51.0" prefWidth="134.0" text="(选  填)" textAlignment="RIGHT" textOverrun="CLIP">
+                        <TextField fx:id="yztext" alignment="CENTER" layoutX="245.0" layoutY="482.0" prefHeight="50.0" prefWidth="241.0" promptText="(选填)输入验证码css selector" style="-fx-background-radius: 15px;" />
+                        <Label accessibleRole="IMAGE_VIEW" alignment="CENTER" contentDisplay="CENTER" layoutX="288.0" layoutY="380.0" opacity="0.51" prefHeight="51.0" prefWidth="134.0" text="(选  填)" textAlignment="RIGHT" textOverrun="CLIP">
                            <font>
                               <Font size="18.0" />
                            </font></Label>
+                        <Button layoutX="298.0" layoutY="542.0" mnemonicParsing="false" onAction="#actionocr" prefHeight="40.0" prefWidth="123.0" text="启动ocr服务器" />
+                        <Button layoutX="298.0" layoutY="593.0" mnemonicParsing="false" onAction="#checkocr" prefHeight="40.0" prefWidth="123.0" text="检测连接 " />
+                        <TextField fx:id="port" alignment="CENTER" layoutX="427.0" layoutY="547.0" prefHeight="30.0" prefWidth="61.0" promptText="端口" text="9898" />
+                        <Label fx:id="showaction" layoutX="436.0" layoutY="599.0" prefHeight="28.0" prefWidth="66.0" textFill="#6e3d3d" />
                      </children>
                   </Pane>
                </content>
@@ -86,15 +96,15 @@
                      <children>
                         <Label layoutX="71.0" layoutY="23.0" prefHeight="344.0" prefWidth="577.0" style="-fx-background-color: #2ca08d; -fx-background-radius: 15px;" />
                         <Label layoutX="71.0" layoutY="391.0" prefHeight="242.0" prefWidth="577.0" style="-fx-background-color: #f7c356; -fx-background-radius: 15px;" />
-                        <TextField fx:id="urltext1" layoutX="117.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="495.0" promptText="url" style="-fx-border-radius: 10px; -fx-background-radius: 15px;" text="https://admin.jzyx.com/member/login.do">
+                        <TextField fx:id="urltext1" layoutX="117.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="495.0" promptText="url" style="-fx-border-radius: 10px; -fx-background-radius: 15px;">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="usertxt1" layoutX="117.0" layoutY="140.0" prefHeight="50.0" prefWidth="495.0" promptText="输入账号xpath" style="-fx-background-radius: 15px;" text="#J_log &gt; div &gt; form &gt; div.form-splice &gt; div:nth-child(1) &gt; div &gt; input" />
-                        <TextField fx:id="passtext1" layoutX="117.0" layoutY="200.0" prefHeight="50.0" prefWidth="495.0" promptText="输入密码xpath" style="-fx-background-radius: 15px;" text="#J_log &gt; div &gt; form &gt; div.form-splice &gt; div:nth-child(2) &gt; div &gt; input" />
-                        <TextField fx:id="yzimg1" alignment="CENTER" layoutX="507.0" layoutY="430.0" prefHeight="50.0" prefWidth="100.0" promptText="验证码长度" style="-fx-background-radius: 15px;" text="5" />
-                        <TextField fx:id="denglu1" layoutX="117.0" layoutY="260.0" prefHeight="50.0" prefWidth="495.0" promptText="输入登录框xpath" style="-fx-background-radius: 15px;" text="#J_log &gt; div &gt; form &gt; button" />
+                        <TextField fx:id="usertxt1" layoutX="117.0" layoutY="140.0" prefHeight="50.0" prefWidth="495.0" promptText="输入账号css selector" style="-fx-background-radius: 15px;" />
+                        <TextField fx:id="passtext1" layoutX="117.0" layoutY="200.0" prefHeight="50.0" prefWidth="495.0" promptText="输入密码css selector" style="-fx-background-radius: 15px;" />
+                        <TextField fx:id="yzimg1" alignment="CENTER" layoutX="507.0" layoutY="430.0" prefHeight="50.0" prefWidth="100.0" promptText="验证码长度" style="-fx-background-radius: 15px;" />
+                        <TextField fx:id="denglu1" layoutX="117.0" layoutY="260.0" prefHeight="50.0" prefWidth="495.0" promptText="输入登录框css selector" style="-fx-background-radius: 15px;" />
                         <Button fx:id="chooserpass1" contentDisplay="RIGHT" layoutX="519.0" layoutY="205.0" mnemonicParsing="false" onAction="#passfile" prefHeight="40.0" prefWidth="85.0" style="-fx-background-radius: 15px;" text="密 码">
                            <font>
                               <Font size="14.0" />
@@ -110,16 +120,14 @@
                               <Font size="17.0" />
                            </font>
                         </Button>
-                        <TextField fx:id="uptext1" layoutX="117.0" layoutY="490.0" prefHeight="50.0" prefWidth="495.0" promptText="(选填)输入需点击的xpath" style="-fx-background-radius: 15px;" />
-                        <TextField fx:id="danxuantext1" layoutX="117.0" layoutY="550.0" prefHeight="50.0" prefWidth="495.0" promptText="(选填)输入单选框xpath" style="-fx-background-radius: 15px;" />
                         <Label accessibleRole="IMAGE_VIEW" alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="29.0" opacity="0.34" prefHeight="51.0" prefWidth="219.0" text="数据加密" textAlignment="RIGHT" textOverrun="CLIP">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="threadnum1" alignment="CENTER" layoutX="240.0" layoutY="326.0" prefHeight="26.0" prefWidth="40.0" promptText="5" text="1" />
+                        <TextField fx:id="threadnum1" alignment="CENTER" layoutX="240.0" layoutY="326.0" prefHeight="26.0" prefWidth="40.0" promptText="5" text="5" />
                         <Label layoutX="206.0" layoutY="328.0" prefHeight="23.0" prefWidth="46.0" text="线程" />
-                        <TextField fx:id="yztext1" layoutX="117.0" layoutY="430.0" prefHeight="50.0" prefWidth="373.0" promptText="(选填)输入验证码xpath" style="-fx-background-radius: 15px;" text="#J_log &gt; div &gt; form &gt; div.form-splice &gt; div.form-group.form-code &gt; div &gt; input" />
+                        <TextField fx:id="yztext1" layoutX="117.0" layoutY="430.0" prefHeight="50.0" prefWidth="373.0" promptText="(选填)输入验证码css selector" style="-fx-background-radius: 15px;" />
                         <Label accessibleRole="IMAGE_VIEW" alignment="CENTER" contentDisplay="CENTER" layoutX="289.0" layoutY="383.0" opacity="0.51" prefHeight="51.0" prefWidth="134.0" text="(选  填)" textAlignment="RIGHT" textOverrun="CLIP">
                            <font>
                               <Font size="18.0" />

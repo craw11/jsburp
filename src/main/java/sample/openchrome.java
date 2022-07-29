@@ -127,7 +127,7 @@ public class openchrome implements Runnable {
             if (finalHarsize != 0 && finalHarsize != 1) {
                 List<HarEntry> entries = har.getLog().getEntries();
 
-                String a =null;
+                String a ="";
                 List<HarPostDataParam> params = entries.get(finalHarsize - 2).getRequest().getPostData().getParams();
                 for (HarPostDataParam param : params) {
                     a = a+param.getValue() + "------";
@@ -159,12 +159,18 @@ public class openchrome implements Runnable {
                     CountDownLatch countDownLatch = new CountDownLatch(1);
 
                     final String print = null;
+                    String ocrport = ocroptions.getOCRPORT();
 
                     Thread thread = new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            String print = pyyzm.print(canonicalPath);
-                            driver.findElement(By.cssSelector(yanzgengma)).sendKeys(print);
+                            try {
+                                String print = HttpRequest.uploadFile("http://127.0.0.1:"+ocrport+"//ocr/file", "image", canonicalPath);
+                                driver.findElement(By.cssSelector(yanzgengma)).sendKeys(print);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+//                            String print = pyyzm.print(canonicalPath);
                             countDownLatch.countDown();
                         }
                     });
@@ -225,6 +231,10 @@ public class openchrome implements Runnable {
                     }
                     Cell cell2 = row.createCell(size + 2);
                     cell2.setCellValue(har.getLog().getEntries().get(i).getResponse().getContent().getText());
+                    Cell cell3 = row.createCell(size + 7);
+                    cell3.setCellValue(har.getLog().getEntries().get(i).getResponse().getStatus());
+                    Cell cell4 = row.createCell(size + 8);
+                    cell4.setCellValue(har.getLog().getEntries().get(i).getResponse().getBodySize());
                 }
 
                 int nnum = 0;

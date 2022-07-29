@@ -132,7 +132,7 @@ public class baopochrome implements Runnable {
             if (finalHarsize != 0 && finalHarsize != 1) {
                 List<HarEntry> entries = har.getLog().getEntries();
 
-                String a = null;
+                String a = "";
                 List<HarPostDataParam> params = entries.get(finalHarsize - 2).getRequest().getPostData().getParams();
                 for (HarPostDataParam param : params) {
 //                    System.out.print(param.getValue() + "------");
