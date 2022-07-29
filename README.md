@@ -32,11 +32,11 @@ ps:我内置了Chrome 版本 103.0.5060.134（正式版本）（64 位）的chro
 
 打开文件夹的cert文件夹,安装里面的证书
 
-![image-20220729195948221](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20220729195948221.png)
+![image-20220729195948221](https://user-images.githubusercontent.com/68812236/181765152-fe4170ea-7291-49a0-affd-ff282dc2ca7e.png)
 
 安装他(没错)
 
-![image-20220729195931864](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20220729195931864.png)
+![image-20220729195931864](https://user-images.githubusercontent.com/68812236/181765212-a3f0f705-dbfe-42e1-9b9e-c5188c051049.png)
 
 证书应该都会安装吧.....
 
@@ -44,9 +44,9 @@ ps:我内置了Chrome 版本 103.0.5060.134（正式版本）（64 位）的chro
 
 打开文件夹的py文件夹,在顶部输入cmd打开命令行窗口
 
-![image-20220729200244885](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20220729200244885.png)
+![image-20220729200244885](https://user-images.githubusercontent.com/68812236/181765255-d4e43b40-1708-44b6-a71a-3bc33899e332.png)
 
-![](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20220729200408065.png)
+![image-20220729200408065](https://user-images.githubusercontent.com/68812236/181765322-1775c089-76cc-482a-8517-423aee60eeed.png)
 
 安装里面requirement.txt的包
 
@@ -80,25 +80,25 @@ java -jar jsburp.jar
 
 出现这个界面就代表成功了
 
-![image-20220729201043183](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20220729201043183.png)
+![image-20220729201043183](https://user-images.githubusercontent.com/68812236/181765437-c039a0f1-f837-4a2d-9b92-eeec76e18443.png)
 
 ### 5.1,点击下面的启动ocr服务器,应该会自动弹出ocr服务器的窗口,
 
 ### 点击下面的测试连接,出现连接成功就代表没毛病了
 
-![image-20220729201245691](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20220729201245691.png)
+![image-20220729201245691](https://user-images.githubusercontent.com/68812236/181765490-d133abae-fb0f-4207-98a6-52f8d739a5d4.png)
 
 ## 6.随便找一个带验证码的网站
 
 点击f12
 
-![image-20220729201816947](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20220729201816947.png)
+![image-20220729201816947](https://user-images.githubusercontent.com/68812236/181765552-d6282e43-9d2d-4854-aaa2-650bcca5f3c2.png)
 
-![image-20220729201850487](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20220729201850487.png)
+![image-20220729201850487](https://user-images.githubusercontent.com/68812236/181765589-496f8222-af50-4f9f-856e-739e8854884d.png)
 
 **点击复制selector**
 
-![image-20220729202536485](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20220729202536485.png)
+![image-20220729202536485](https://user-images.githubusercontent.com/68812236/181765656-bc608863-e3cc-4efa-9ae5-0951ef2fbc36.png)
 
 **出现浏览器就代表成功了,要启动ocr服务器并且显示连接成功才可以爆破**
 
@@ -115,3 +115,4 @@ java -jar jsburp.jar
 ## 11.config文件夹里的config.properties文件夹将openchrome的参数修改为false修改为就可以不显示浏览器了,可以获得更快的爆破速度
 
 # ps.最后有问题可以加我微信,一天20小时在新,最后推下我们的公众号"硬核颜究",安全圈核弹级大佬**龙哥**在里面坐镇(重点)
+
