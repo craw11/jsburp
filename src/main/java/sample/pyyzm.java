@@ -18,7 +18,7 @@ public class pyyzm {
         try {
 
             try {
-                inputStream = Runtime.getRuntime().exec("cmd /c python3 "+parent+"\\py\\main.py " + filename).getInputStream();
+                inputStream = Runtime.getRuntime().exec("cmd /c "+parent+"\\py\\python38\\python.exe "+parent+"\\py\\main.py " + filename).getInputStream();
             }catch (IOException e){
                 inputStream = Runtime.getRuntime().exec("cmd /c python "+parent+"\\py\\main.py " + filename).getInputStream();
             }

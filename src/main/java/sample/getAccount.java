@@ -14,6 +14,7 @@ public class getAccount {
 
     public static void setUser(String userst) {
 
+        ArrayList<String> strings = new ArrayList<>();
         File userdict = new File(userst);
 
         FileInputStream inputStream = null;
@@ -29,8 +30,11 @@ public class getAccount {
             //设置的读取的字节数
             while ((line = br.readLine()) != null) {
 
-                user.add(line);
+//
+                strings.add(line);
+//
             }
+            user = strings;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -39,6 +43,8 @@ public class getAccount {
     }
 
     public static void setPass(String passst) {
+
+        ArrayList<String> strings = new ArrayList<>();
 
         File passdict = new File(passst);
 
@@ -54,8 +60,11 @@ public class getAccount {
             //设置的读取的字节数
             while ((line2 = br2.readLine()) != null) {
 
-                password.add(line2);
+//                ArrayList<String> strings = new ArrayList<>();
+                strings.add(line2);
+//
             }
+            password= strings;
         } catch (Exception e) {
             e.printStackTrace();
         }

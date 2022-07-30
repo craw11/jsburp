@@ -14,9 +14,13 @@ public class actionocr {
 
     public void actionocr(String port) {
         try {
-            inputStream = Runtime.getRuntime().exec("cmd /k start python3 C:\\Users\\admin\\Desktop\\ocr_api_server-main\\ocr_server.py --port "+port+" --ocr").getInputStream();
+            inputStream = Runtime.getRuntime().exec("cmd /k start "+parent+"\\py\\python38\\python.exe "+parent+"\\py\\ocr_server.py --port "+port+" --ocr").getInputStream();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            try {
+                inputStream = Runtime.getRuntime().exec("cmd /k start python "+parent+"\\py\\ocr_server.py --port "+port+" --ocr").getInputStream();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
         }
     }
 
