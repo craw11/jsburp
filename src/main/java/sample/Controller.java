@@ -2,29 +2,24 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import net.lightbody.bmp.core.har.Har;
+import net.lightbody.bmp.core.har.HarEntry;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
 import java.util.UUID;
+import java.util.jar.JarOutputStream;
 
 public class Controller {
-
-
-    @FXML
-    private Button chooserpass;
-
-    @FXML
-    private Button chooserpass1;
-
-    @FXML
-    private Button chooseuser;
-
-    @FXML
-    private Button chooseuser1;
 
     @FXML
     private TextField denglu;
@@ -36,9 +31,10 @@ public class Controller {
     private Button logintext;
 
     @FXML
-    private Button logintext1;
+    private Slider logintext1;
 
-
+    @FXML
+    private ToggleButton openchrome;
 
     @FXML
     private TextField passtext;
@@ -47,13 +43,46 @@ public class Controller {
     private TextField passtext1;
 
     @FXML
-    private Label showaction;
+    private Slider threadnum;
 
     @FXML
-    private TextField threadnum;
+    private Slider threadnum1;
 
     @FXML
-    private TextField threadnum1;
+    private ToggleGroup toggle1;
+
+    @FXML
+    private ToggleGroup toggle12;
+
+    @FXML
+    private ToggleGroup toggle13;
+
+    @FXML
+    private ToggleGroup toggle14;
+
+    @FXML
+    private ToggleGroup toggle15;
+
+    @FXML
+    private ToggleGroup toggle17;
+
+    @FXML
+    private ToggleGroup toggle19;
+
+    @FXML
+    private ToggleGroup toggle2;
+
+    @FXML
+    private ToggleGroup toggle20;
+
+    @FXML
+    private ToggleGroup toggle3;
+
+    @FXML
+    private ToggleGroup toggle4;
+
+    @FXML
+    private ToggleGroup toggle5;
 
     @FXML
     private TextField urltext;
@@ -62,6 +91,8 @@ public class Controller {
     private TextField urltext1;
 
     @FXML
+    private TextField yztext;
+    @FXML
     private TextField usertxt;
 
     @FXML
@@ -69,32 +100,71 @@ public class Controller {
 
     @FXML
     private TextField yzimg;
+    @FXML
+    private ChoiceBox<String> yznum;
 
     @FXML
-    private TextField yzimg1;
-
-    @FXML
-    private TextField yztext;
+    private ChoiceBox<String> yzimg1;
 
     @FXML
     private TextField yztext1;
 
     @FXML
+    private ToggleButton yzmnew;
+
+    @FXML
+    private ToggleButton yzmold;
+
+    @FXML
     private TextField port;
+
+    @FXML
+    private Label showaction;
 
 
     @FXML
-    void login(ActionEvent event) {
+    private RadioButton xpath;
+    @FXML
+    private RadioButton css;
+    @FXML
+    private void initialize() {
+        yznum.setValue("4");
+        yznum.getItems().add("1");
+        yznum.getItems().add("2");
+        yznum.getItems().add("3");
+        yznum.getItems().add("4");
+        yznum.getItems().add("5");
+        yznum.getItems().add("6");
+        yznum.getItems().add("7");
+        yznum.getItems().add("8");
+        yzimg1.setValue("4");
+        yzimg1.getItems().add("1");
+        yzimg1.getItems().add("2");
+        yzimg1.getItems().add("3");
+        yzimg1.getItems().add("4");
+        yzimg1.getItems().add("5");
+        yzimg1.getItems().add("6");
+        yzimg1.getItems().add("7");
+        yzimg1.getItems().add("8");
+    }
 
-        String usertxtText = usertxt.getText();
-        String passtextText = passtext.getText();
-        String urltextText = urltext.getText();
-        String yzimgText = yzimg.getText();
-        String yztextText = yztext.getText();
-        String dengluText = denglu.getText();
+    @FXML
+    void login(ActionEvent event) throws IOException {
+
+        String usertxtText = usertxt.getText().replace(" ","");
+        String passtextText = passtext.getText().replace(" ","");
+        String urltextText = urltext.getText().replace(" ","");
+        String yzimgText = yzimg.getText().replace(" ","");
+        String yztextText = yztext.getText().replace(" ","");
+        String dengluText = denglu.getText().replace(" ","");
 
 
-        int threadnumText = Integer.parseInt(threadnum.getText());
+        chromeoptions.openchrome = openchrome.isSelected();
+        chromeoptions.isxpath = xpath.isSelected();
+        int threadnumText = Integer.parseInt(String.valueOf(threadnum.getValue()).substring(0,2).replace(".",""));
+
+        String value = yznum.getValue();
+        yzmconfig.num = Integer.parseInt(value);
 
         File path = getFilePath.getPath();
         String parent = path.getParent();
@@ -113,6 +183,9 @@ public class Controller {
         UUID uuidConstructor = new UUID(msb, lsb);
         String replace = uuidConstructor.toString().replace("-", "");
 
+        outFile.num = threadnumText;
+        ArrayList<HarEntry> entries = new ArrayList<>();
+        outFile.entries = entries;
 
         for (int i = 0; i < threadnumText; i++) {
 
@@ -131,15 +204,15 @@ public class Controller {
     @FXML
     void login1(ActionEvent event) {
 
-        String usertxtText = usertxt1.getText();
-        String passtextText = passtext1.getText();
-        String urltextText = urltext1.getText();
+        String usertxtText = usertxt1.getText().replace(" ","");
+        String passtextText = passtext1.getText().replace(" ","");
+        String urltextText = urltext1.getText().replace(" ","");
         String yzimgText = "";
         int k;
-        if (yzimg1.getText().equals("")) {
+        if (yzimg1.getValue().equals("")) {
             k = 0;
         } else {
-            k = Integer.parseInt(yzimg1.getText());
+            k = Integer.parseInt(yzimg1.getValue());
         }
 
         for (int j = 0; j < k; j++) {
@@ -147,10 +220,12 @@ public class Controller {
         }
 
 
-        String yztextText = yztext1.getText();
-        String dengluText = denglu1.getText();
+        String yztextText = yztext1.getText().replace(" ","");
+        String dengluText = denglu1.getText().replace(" ","");
 
-        int threadnumText = Integer.parseInt(threadnum1.getText());
+        chromeoptions.openchrome = openchrome.isSelected();
+        chromeoptions.isxpath = xpath.isSelected();
+        int threadnumText = Integer.parseInt(String.valueOf(threadnum1.getValue()).substring(0,2).replace(".",""));
 
         File path = getFilePath.getPath();
         String parent = path.getParent();
@@ -170,6 +245,9 @@ public class Controller {
         UUID uuidConstructor = new UUID(msb, lsb);
         String replace = uuidConstructor.toString().replace("-", "");
 
+        outFile.num = threadnumText;
+        ArrayList<HarEntry> entries = new ArrayList<HarEntry>();
+        outFile.entries = entries;
 
         for (int i = 0; i < threadnumText; i++) {
 
@@ -213,23 +291,31 @@ public class Controller {
     }
 
     @FXML
-    void actionocr(ActionEvent event) {
+    void actionocr(ActionEvent event) throws Exception {
+
 
         new ocroptions().setOCRPORT(port.getText());
-        new actionocr().actionocr(ocroptions.getOCRPORT());
+
+        new actionocr().actionocr(ocroptions.getOCRPORT(),yzmnew.isSelected());
+
+        String s = checkpy.doGet("http://127.0.0.1:" + ocroptions.getOCRPORT() + "/ping");
+        if (s.equals("pong")) {
+            showaction.setText("连接成功");
+        } else {
+            showaction.setText("连接失败");
+        }
 
     }
 
     @FXML
     void checkocr(ActionEvent event) throws Exception {
 
-        String s = checkpy.doGet("http://127.0.0.1:"+ocroptions.getOCRPORT()+ "/ping");
-        if (s.equals("pong")){
+        String s = checkpy.doGet("http://127.0.0.1:" + ocroptions.getOCRPORT() + "/ping");
+        if (s.equals("pong")) {
             showaction.setText("连接成功");
         } else {
             showaction.setText("连接失败");
         }
-
-
     }
+
 }

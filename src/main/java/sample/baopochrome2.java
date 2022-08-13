@@ -57,13 +57,13 @@ public class baopochrome2 implements Runnable {
         String parent = path.getParent();
 
         System.setProperty("webdriver.chrome.driver", parent + "//Tools//chromedriver.exe");
-//        System.setProperty("webdriver.chrome.driver", "src/Tools/chromedriver.exe");
         BrowserMobProxy browserMobProxy = new BrowserMobProxyServer();
-        browserMobProxy.start();
         browserMobProxy.enableHarCaptureTypes(CaptureType.REQUEST_CONTENT, CaptureType.RESPONSE_CONTENT);
         browserMobProxy.setHarCaptureTypes(CaptureType.RESPONSE_CONTENT, CaptureType.REQUEST_CONTENT);
-
+        browserMobProxy.setTrustAllServers(true);
         browserMobProxy.newHar("kk");
+        browserMobProxy.start();
+
 
         Proxy proxy = ClientUtil.createSeleniumProxy(browserMobProxy);
 
@@ -72,23 +72,21 @@ public class baopochrome2 implements Runnable {
 
         System.out.println(httpProxy);
 
-        proxy.setHttpProxy("127.0.0.1" + port);
+        proxy.setHttpProxy("127.0.0.1"+port);
 
+        proxy.setSslProxy("127.0.0.1"+port);
         ChromeOptions options = new ChromeOptions().addArguments("--proxy-server=http://" + proxy.getHttpProxy(), "--incognito");
-
+//        ChromeOptions options = new ChromeOptions();
+//        options.setBinary(parent+"\\Tools\\chrome.exe");
         options.addArguments("--disable-extensions");
         options.addArguments("–disable-plugins");
-        Properties properties = new Properties();
-        try {
-            properties.load(new FileReader(parent+"//config//config.properties"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        String showChrome = properties.getProperty("showChrome");
+        options.addArguments("--ignore-certificate-errors");
 
-        if (showChrome.equals("false")){
+        if (!chromeoptions.openchrome) {
+            // System.out.println("我执行了");
             options.addArguments("--headless");
         }
+
         options.addArguments("blink-settings=imagesEnabled=false");
 
         WebDriver driver = new ChromeDriver(options);
@@ -131,95 +129,81 @@ public class baopochrome2 implements Runnable {
 
         });
 
-        try {
-
-            ok:
-            for (int j = i1; j < usersize; j++) {
-
-                if (j != i1) i2 = 0;
-                for (int k = i2; k < passsize; k++) {
-                    driver.get(url);  //地址栏输入百度地址
-
-                    driver.findElement(By.cssSelector(account)).sendKeys(getAccount.user.get(j));//搜索输入框输入Selenium
-
-                    driver.findElement(By.cssSelector(passwd)).sendKeys(getAccount.password.get(k));//搜索输入框输入Selenium
-
-
-                    driver.findElement(By.cssSelector(denglukuang)).click();//点击百度一下按钮
-
-                    driver.manage().timeouts().implicitlyWait(400, TimeUnit.SECONDS);
-
-                    executorService.execute(thread);
-                    num++;
-                        if (num == count) {
-                            break ok;
-                        }
-                }
-            }
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-        driver.close();
-
-        Har har = browserMobProxy.getHar();
-        har.getLog().getEntries().removeIf(x -> !x.getRequest().getMethod().equals("POST"));
-        har.getLog().getEntries().removeIf(x -> Pattern.matches(".*google.*", x.getRequest().getUrl()));
-
-        synchronized (baopochrome.class) {
-
-            Sheet sheet = createFile.getsheet();
-            XSSFWorkbook ex = createFile.getEx();
-
-            int indexnum = index * count;
-
-
+        if (chromeoptions.isxpath){
             try {
 
-                for (int i = 0; i < count; i++) {
-
-                    Row row = sheet.createRow(indexnum + i);
-                    int size = har.getLog().getEntries().get(i).getRequest().getPostData().getParams().size();
-
-                    List<HarPostDataParam> params = har.getLog().getEntries().get(i).getRequest().getPostData().getParams();
-
-                    for (int j = 0; j < size; j++) {
-                        Cell cell = row.createCell(j);
-                        cell.setCellValue(params.get(j).getValue());
-                    }
-                    Cell cell2 = row.createCell(size + 2);
-                    cell2.setCellValue(har.getLog().getEntries().get(i).getResponse().getContent().getText());
-                }
-
-                int nnum = 0;
                 ok:
                 for (int j = i1; j < usersize; j++) {
 
                     if (j != i1) i2 = 0;
                     for (int k = i2; k < passsize; k++) {
+                        driver.get(url);  //地址栏输入百度地址
 
-                        Cell cell1 = sheet.getRow(indexnum + nnum).createCell(har.getLog().getEntries().get(nnum).getRequest().getPostData().getParams().size() + 5);
-                        cell1.setCellValue(getAccount.user.get(j));
+                        driver.findElement(By.xpath(account)).sendKeys(getAccount.user.get(j));//搜索输入框输入Selenium
 
-                        Cell cell2 = sheet.getRow(indexnum + nnum).createCell(har.getLog().getEntries().get(nnum).getRequest().getPostData().getParams().size() + 6);
-                        cell2.setCellValue(getAccount.password.get(k));
+                        driver.findElement(By.xpath(passwd)).sendKeys(getAccount.password.get(k));//搜索输入框输入Selenium
 
-                        nnum++;
-                            if (nnum == count) {
-                                break ok;
-                            }
+
+                        driver.findElement(By.xpath(denglukuang)).click();//点击百度一下按钮
+
+                        driver.manage().timeouts().implicitlyWait(400, TimeUnit.SECONDS);
+
+                        executorService.execute(thread);
+                        num++;
+                        if (num == count) {
+                            break ok;
+                        }
                     }
                 }
 
-                System.out.println(parent + "//output//" +replace + ".xlsx");
-//                FileOutputStream outputStream = new FileOutputStream("har/" + replace + ".xlsx");
-                FileOutputStream outputStream = new FileOutputStream(parent + "//output//" + replace + ".xlsx");
-                ex.write(outputStream);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }else {
+            try {
 
-            } catch (IOException e) {
+                ok:
+                for (int j = i1; j < usersize; j++) {
+
+                    if (j != i1) i2 = 0;
+                    for (int k = i2; k < passsize; k++) {
+                        driver.get(url);  //地址栏输入百度地址
+
+                        driver.findElement(By.cssSelector(account)).sendKeys(getAccount.user.get(j));//搜索输入框输入Selenium
+
+                        driver.findElement(By.cssSelector(passwd)).sendKeys(getAccount.password.get(k));//搜索输入框输入Selenium
+
+
+                        driver.findElement(By.cssSelector(denglukuang)).click();//点击百度一下按钮
+
+                        driver.manage().timeouts().implicitlyWait(400, TimeUnit.SECONDS);
+
+                        executorService.execute(thread);
+                        num++;
+                        if (num == count) {
+                            break ok;
+                        }
+                    }
+                }
+
+            } catch (Exception e) {
                 throw new RuntimeException(e);
             }
         }
+
+
+        driver.quit();
+
+        Har har = browserMobProxy.getHar();
+        har.getLog().getEntries().removeIf(x -> !x.getRequest().getMethod().equals("POST"));
+        har.getLog().getEntries().removeIf(x -> Pattern.matches(".*google.*", x.getRequest().getUrl()));
+        har.getLog().getEntries().removeIf(x -> Pattern.matches(".*googles.*", x.getRequest().getUrl()));
+
+        List<HarEntry> entries = har.getLog().getEntries();
+
+        synchronized (openchrome.class) {
+            new outFile().addFile(entries, replace, parent);
+        }
+
     }
 }

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="868.0" prefWidth="1088.0" stylesheets="@bootstrap3.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <TabPane layoutX="264.0" layoutY="36.0" prefHeight="815.0" prefWidth="828.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab styleClass="lg" text=" 爆  破 ">
+                    <content>
+                        <Pane prefHeight="710.0" prefWidth="855.0" styleClass="title">
+                            <children>
+                        <Label layoutX="246.0" layoutY="632.0" lineSpacing="1.0" prefHeight="103.0" prefWidth="330.0" style="-fx-border-color: red; -fx-border-radius: 15px;" />
+                                <TextField fx:id="urltext" layoutX="186.0" layoutY="110.0" prefHeight="45.0" prefWidth="420.0" promptText="url" style="-fx-background-radius: 0;" styleClass="lg">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="usertxt" layoutX="186.0" layoutY="180.0" prefHeight="45.0" prefWidth="420.0" promptText="账号" styleClass="lg">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="passtext" layoutX="186.0" layoutY="250.0" prefHeight="45.0" prefWidth="420.0" promptText="密码" styleClass="lg">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="denglu" layoutX="186.0" layoutY="320.0" prefHeight="45.0" prefWidth="420.0" promptText="登录框" styleClass="lg">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextField>
+                                <Button fx:id="logintext" layoutX="334.0" layoutY="380.0" mnemonicParsing="false" onAction="#login" prefHeight="42.0" prefWidth="124.0" style="-fx-background-radius: 5;" text="开始爆破" textFill="WHITE">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                           <styleClass>
+                              <String fx:value="lg" />
+                              <String fx:value="info" />
+                           </styleClass>
+                                </Button>
+                                <Slider fx:id="threadnum" layoutX="221.0" layoutY="395.0" max="20.0" min="1.0" prefHeight="14.0" prefWidth="99.0" value="5.0" />
+                                <TextField fx:id="yzimg" layoutX="186.0" layoutY="494.0" prefHeight="45.0" prefWidth="205.0" promptText="验证码图片" styleClass="lg" />
+                                <TextField fx:id="yztext" layoutX="402.0" layoutY="494.0" prefHeight="45.0" prefWidth="205.0" promptText="验证码输入框" styleClass="lg" />
+                                <ToggleButton fx:id="openchrome" layoutX="472.0" layoutY="388.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="99.0" selected="true" styleClass="warning" text="显示浏览器" />
+                                <Button layoutX="324.0" layoutY="555.0" mnemonicParsing="false" onAction="#actionocr" prefHeight="47.0" prefWidth="143.0" style="-fx-background-radius: 5;" text="启动ocr" textFill="#f7f7f7">
+                           <styleClass>
+                              <String fx:value="lg" />
+                              <String fx:value="info" />
+                           </styleClass></Button>
+                        <ChoiceBox fx:id="yznum" layoutX="460.0" layoutY="692.0" prefHeight="23.0" prefWidth="64.0" value="4">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="1" />
+                                 <String fx:value="2" />
+                                 <String fx:value="3" />
+                                 <String fx:value="4" />
+                                 <String fx:value="5" />
+                                 <String fx:value="6" />
+                                 <String fx:value="7" />
+                                 <String fx:value="8" />
+                              </FXCollections>
+                           </items>
+                        </ChoiceBox>
+                        <ToggleButton fx:id="yzmnew" layoutX="436.0" layoutY="652.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" selected="true" styleClass="success" text="new">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="toggle20" />
+                           </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="yzmold" layoutX="496.0" layoutY="652.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" selected="false" styleClass="success" text="old" toggleGroup="$toggle20" />
+                        <Label layoutX="270.0" layoutY="673.0" text="验证码选项">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <Label layoutX="369.0" layoutY="656.0" prefHeight="15.0" prefWidth="53.0" text="ocr模型" />
+                        <Label layoutX="369.0" layoutY="696.0" text="验证码位数" />
+                        <TextField fx:id="port" alignment="CENTER" layoutX="474.0" layoutY="562.0" prefHeight="33.0" prefWidth="62.0" text="9898" />
+                        <Label fx:id="showaction" layoutX="561.0" layoutY="563.0" prefHeight="15.0" prefWidth="69.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff0404c2" height="2.0" layoutX="52.0" layoutY="448.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="696.0" />
+                        <Label layoutX="366.0" layoutY="450.0" opacity="0.7" styleClass="lg" text="(选  填)" />
+                        <Button layoutX="624.0" layoutY="250.0" mnemonicParsing="false" onAction="#passfile" prefHeight="46.0" prefWidth="85.0" text="密 码">
+                           <styleClass>
+                              <String fx:value="lg" />
+                              <String fx:value="success" />
+                           </styleClass>
+                        </Button>
+                        <Button layoutX="624.0" layoutY="180.0" mnemonicParsing="false" onAction="#userfile" prefHeight="46.0" prefWidth="85.0" text="账 号">
+                           <styleClass>
+                              <String fx:value="lg" />
+                              <String fx:value="action-btn" />
+                              <String fx:value="success" />
+                           </styleClass>
+                        </Button>
+                        <Label layoutX="168.0" layoutY="391.0" text="线程数">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                            </children>
+                        </Pane>
+                    </content>
+                </Tab>
+                <Tab styleClass="lg" text=" 加  密 ">
+                    <content>
+                        <Pane prefHeight="596.0" prefWidth="775.0" snapToPixel="false">
+                            <children>
+                                <Label layoutX="432.0" layoutY="494.0" prefHeight="45.0" prefWidth="91.0" text="验证码位数">
+
+                                    <Font size="20.0" />
+
+                                </Label>
+                                <TextField fx:id="urltext1" layoutX="186.0" layoutY="110.0" prefHeight="45.0" prefWidth="420.0" promptText="url" styleClass="lg">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="usertxt1" layoutX="186.0" layoutY="180.0" prefHeight="45.0" prefWidth="420.0" promptText="账号" styleClass="lg">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="passtext1" layoutX="186.0" layoutY="250.0" prefHeight="45.0" prefWidth="420.0" promptText="密码" styleClass="lg">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="denglu1" layoutX="186.0" layoutY="320.0" prefHeight="45.0" prefWidth="420.0" promptText="登录框" styleClass="lg">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextField>
+                                <Button layoutX="334.0" layoutY="380.0" mnemonicParsing="false" onAction="#login1" prefHeight="42.0" prefWidth="124.0" text="开始加密">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                           <styleClass>
+                              <String fx:value="lg" />
+                              <String fx:value="info" />
+                           </styleClass>
+                                </Button>
+                                <Slider fx:id="threadnum1" layoutX="221.0" layoutY="395.0" max="20.0" min="1.0" prefHeight="14.0" prefWidth="99.0" value="5.0" />
+                                <TextField fx:id="yztext1" layoutX="186.0" layoutY="494.0" prefHeight="45.0" prefWidth="205.0" promptText="验证码图片处" styleClass="lg" />
+                                <ChoiceBox fx:id="yzimg1" layoutX="519.0" layoutY="504.0" prefHeight="23.0" prefWidth="61.0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="1" />
+                                            <String fx:value="2" />
+                                            <String fx:value="3" />
+                                            <String fx:value="4" />
+                                            <String fx:value="5" />
+                                            <String fx:value="6" />
+                                            <String fx:value="7" />
+                                            <String fx:value="8" />
+                                        </FXCollections>
+                                    </items>
+                                    <value>
+                                        <String fx:value="4" />
+                                    </value>
+                                </ChoiceBox>
+                        <ToggleButton fx:id="openchrome1" layoutX="471.0" layoutY="388.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="99.0" selected="true" styleClass="warning" text="显示浏览器" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff0404c2" height="2.0" layoutX="52.0" layoutY="448.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="696.0" />
+                        <Label layoutX="366.0" layoutY="450.0" opacity="0.7" styleClass="lg" text="(选  填)" />
+                        <Button layoutX="624.0" layoutY="180.0" mnemonicParsing="false" onAction="#userfile" prefHeight="46.0" prefWidth="85.0" text="账 号">
+                           <styleClass>
+                              <String fx:value="lg" />
+                              <String fx:value="action-btn" />
+                              <String fx:value="success" />
+                           </styleClass>
+                        </Button>
+                        <Button layoutX="624.0" layoutY="250.0" mnemonicParsing="false" onAction="#passfile" prefHeight="46.0" prefWidth="85.0" text="密 码">
+                           <styleClass>
+                              <String fx:value="lg" />
+                              <String fx:value="success" />
+                           </styleClass>
+                        </Button>
+                        <Label layoutX="168.0" layoutY="391.0" text="线程数">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                            </children>
+                        </Pane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="868.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="263.0" />
+      <Label layoutX="415.0" layoutY="123.0" prefHeight="57.0" prefWidth="192.0" />
+      <Label layoutX="172.0" layoutY="91.0" opacity="0.5" prefHeight="471.0" prefWidth="270.0" text="JS BURP">
+         <font>
+            <Font name="Agency FB" size="96.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="css" layoutX="449.0" layoutY="152.0" mnemonicParsing="false" selected="true" text="css selector">
+         <toggleGroup>
+            <ToggleGroup fx:id="a1" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="571.0" layoutY="148.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="65.0" text="xpath" toggleGroup="$a1" fx:id="xpath" />
+    </children>
+
+
+</Pane>
